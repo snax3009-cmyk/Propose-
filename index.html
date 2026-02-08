@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Forever</title>
+    <style>
+        body {
+            background-color: #fff0f3;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .container {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(255, 75, 110, 0.2);
+            max-width: 500px;
+            position: relative;
+        }
+
+        h1 {
+            color: #ff4b6e;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .note {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 25px;
+            font-style: italic;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 12px 30px;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        #yesBtn {
+            background-color: #ff4b6e;
+            color: white;
+        }
+
+        #noBtn {
+            background-color: #ccc;
+            color: #333;
+            position: absolute;
+        }
+
+        .heart {
+            color: #ff4b6e;
+            font-size: 50px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="heart">❤️</div>
+        <h1>Will you be mine in every universe ?</h1>
+        
+        <div class="note">
+            "Every second of every day, my heart beats only for you. I promise to love you, cherish you, and choose you over and over again. You are my today, my tomorrow, and my forever. No one else—just you."
+        </div>
+
+        <div class="buttons">
+            <button id="yesBtn" onclick="celebrate()">Yes!</button>
+            <button id="noBtn" onmouseover="moveButton()">No</button>
+        </div>
+    </div>
+
+    <script>
+        function moveButton() {
+            const btn = document.getElementById('noBtn');
+            // Move button to a random position within the viewport
+            const x = Math.random() * (window.innerWidth - btn.offsetWidth);
+            const y = Math.random() * (window.innerHeight - btn.offsetHeight);
+            
+            btn.style.left = x + 'px';
+            btn.style.top = y + 'px';
+        }
+
+        function celebrate() {
+            document.querySelector('.container').innerHTML = `
+                <div class="heart">💖</div>
+                <h1>I Knew You'd Say Yes!</h1>
+                <p class="note">I'll love you every second, every minute, and every hour of my life. Forever starts now.</p>
+            `;
+            document.body.style.backgroundColor = "#ffc1cf";
+        }
+    </script>
+</body>
+</html>
